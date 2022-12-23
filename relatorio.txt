@@ -1,0 +1,237 @@
+Eric Leao 2110694 3WB
+Pedro Machado Peçanha 2110535 3WB
+
+Na teoria, tudo está funcionando no nosso trabalho. Abaixo, primeiro os testes de todas as operações, e no final de retornos e chamadas de função.
+
+Testes de operações:
+
+1ºteste (retorno esperado 1, e retorna 1)
+
+function
+v0 = $1 + $0
+ret v0
+end
+
+---
+
+2ºteste (retorno esperado 7, e retorna 7)
+
+function
+v0 = $1 + $0
+v3 = v0 + $6
+ret v3
+end
+
+---
+
+3ºteste (retorno esperado 1 + parâmetro, retorna 1 + parâmetro)
+
+function
+v0 = $1 + $0
+v0 = v0 + p0
+ret v0
+end
+
+---
+
+4ºteste (retorno esperado parâmetro * 2, retorna parâmetro*2)
+
+function
+v0 = $1 + p0
+v0 = p0 + p0
+ret v0
+end
+
+---
+
+5ºteste (retorno esperado parâmetro + 4, retorna parâmetro + 4)
+
+function
+v3 = $1 + p0
+v3 = p0 + $4
+ret v3
+end
+
+---
+
+6ºteste (retorno esperado 4 + parâmetro, retorna 4 + parâmetro)
+
+function
+v0 = $1 + p0
+v1 = p0 + $4
+v3 = v1 + $0
+ret v3
+end
+
+---
+
+7ºteste (retorno esperado 1, e retorna 1)
+
+function
+v0 = $1 - $0
+ret v0
+end
+
+---
+
+8ºteste (retorno esperado -5, e retorna -5)
+
+function
+v0 = $1 - $0
+v0 = v0 - $6
+ret v0
+end
+
+---
+
+9ºteste (retorno esperado 1 - parâmetro, retorna 1 - parâmetro)
+
+function
+v0 = $1 - $0
+v0 = v0 - p0
+ret v0
+end
+
+---
+
+10ºteste (retorno esperado 0, 0)
+
+function
+v0 = $1 - p0
+v0 = p0 - p0
+ret v0
+end
+
+---
+
+11ºteste (retorno esperado parâmetro - 4, retorna parâmetro - 4)
+
+function
+v0 = $1 - p0
+v0 = p0 - $4
+ret v0
+end
+
+---
+
+12ºteste (retorno esperado parâmetro - 4, parâmetro - 4)
+
+function
+v0 = $1 - p0
+v0 = p0 - $4
+v1 = v0 - $0
+ret v1
+end
+
+---
+
+13ºteste (retorno esperado 1, e retorna 1)
+
+function
+v4 = $1 * $1
+ret v4
+end
+
+---
+
+14ºteste (retorno esperado 6, e retorna 6)
+
+function
+v0 = $1 * $1
+v0 = v0 * $6
+ret v0
+end
+
+---
+
+15ºteste (retorno esperado 4 * parâmetro, retorna 4 * parâmetro)
+
+function
+v0 = $1 * $4
+v0 = v0 * p0
+ret v0
+end
+
+---
+
+16ºteste (retorno esperado parâmetro * parâmetro, retorna parâmetro * parâmetro)
+
+function
+v0 = $1 * p0
+v0 = p0 * p0
+ret v0
+end
+
+---
+
+17ºteste (retorno esperado parâmetro * 4, retorna parâmetro * 4)
+
+function
+v2 = $1 * p0
+v2 = p0 * $4
+ret v2
+end
+
+---
+
+18ºteste (retorno esperado 0, retorna 0)
+
+function
+v2 = $1 * p0
+v2 = p0 * $4
+v3 = v2 * $0
+ret v3
+end
+
+Testes de retorno e chamada
+
+---
+
+19ºteste (testando o zret sendo chamado, retorno esperado 5, retorna 5)
+
+function
+v3 = $2 + $3
+zret $0 v3
+v2 = v2 + $10
+ret v2
+end
+
+---
+
+20ºteste (testando a passagem que não se encaixa no zret, retorno esperado 15, retorna 15)
+
+function
+v1 = $2 + $3
+zret v1 v1
+v1 = v1 + $10
+ret v1
+end
+
+---
+
+21ºteste (uso do zret em caso recursivo: pensando em um parâmetro > 0 (5), retorno esperado 224, retorna 224)
+
+function
+zret p0 $7
+v1 = p0 - $1
+v1 = call 0 v1
+v4 = v1 + v1
+ret v4
+end
+
+
+---
+
+22º teste (chamada de outra função, retorno esperado 20, retorna 20)
+
+function
+v0 = $5 + $15
+ret v0
+end
+function
+v0 = $20 + $20
+v0 = call 0 $0
+ret v0
+end
+
+
